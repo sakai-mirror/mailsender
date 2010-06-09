@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<registration>
+
+	<tool id="sakai.mailtool" title="Email"
+		description="Send mail to participants in your site.">
+
+		<category name="course" />
+		<category name="ucourse" />
+		<category name="project" />
+
+		<configuration name="help.id" value="sakai.mailsender" />
+		<!-- 
+			<configuration name="help.url" value="/mailsender/sakai_mailsender/help.html" />
+		-->
+		<!-- 
+			see http://bugs.sakaiproject.org/jira/browse/SAK-4120
+			for the following "functions.require" parameter
+		-->
+		<configuration name="functions.require" value="mailtool.send" />
+
+		<configuration name="subjectprefix" value="" />
+
+		<!-- idea from Shelby -->
+		<!-- <configuration name="allow_outside_recipients" value="false" /> -->
+
+		<!-- <configuration name="allow_attachments" value="false" /> -->
+
+		<!-- <configuration name="replyto" value="" /> -->
+
+		<!-- requested by Cheryl -->
+		<!-- This should be "true" or "false" -->
+		<configuration name="displayinvalidemailaddrs" value="true" />
+
+		<!-- <configuration name="alpha_by" value="display" /> -->
+
+		<!-- This should be "true" or "false" -->
+		<configuration name="emailarchive" value="" />
+
+		<configuration name="mail.newlock.siteid" value="" />
+
+		<configuration name="sendmecopy" value="" />
+		<configuration name="replyto" value="" />
+		<configuration name="messageformat" value="" />
+	</tool>
+
+	<function name="mailtool.admin" />
+	<function name="mailtool.send" />
+
+</registration>
