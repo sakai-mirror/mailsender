@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<!-- the base is parent -->
+	<parent>
+		<groupId>org.sakaiproject</groupId>
+		<artifactId>mailsender-pack-base</artifactId>
+		<version>1.4.0</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<name>Sakai Mail Sender Components Internal Pack</name>
+	<groupId>org.sakaiproject</groupId>
+	<artifactId>mailsender-pack-internal</artifactId>
+	<organization>
+		<name>Sakai Project</name>
+		<url>http://sakaiproject.org/</url>
+	</organization>
+	<inceptionYear>2007</inceptionYear>
+	<description>Mail Sender components pack (special Sakai convention)</description>
+	<packaging>sakai-component</packaging>
+
+	<properties>
+		<deploy.target>components</deploy.target>
+	</properties>
+
+	<dependencies>
+		<!-- internal dependencies -->
+		<dependency>
+			<groupId>org.sakaiproject</groupId>
+			<artifactId>mailsender-impl-internal</artifactId>
+		</dependency>
+	</dependencies>
+</project>
