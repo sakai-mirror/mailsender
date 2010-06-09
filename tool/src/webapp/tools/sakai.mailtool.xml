@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<registration>
+
+	<tool id="sakai.mailtool" title="Mailtool"
+		description="Send mail to groups in your course.(Attachment-enabled) ">
+
+		<category name="course" />
+		<category name="project" />
+
+		<configuration name="help.id" value="sakai.mailtool" />
+		<!-- 
+			<configuration name="help.url" value="/mailtool/sakai_mailtool/help.html" />
+		-->
+		<!-- 
+			see http://bugs.sakaiproject.org/jira/browse/SAK-4120
+			for the following "functions.require" parameter
+		-->
+		<configuration name="functions.require" value="mailtool.send" />
+
+
+		<!--
+			This parameter determines how recipients will be selected
+			role
+			user
+			tree
+			sidebyside   wireframe from Kristol
+			foothill      wireframe from Vivie
+		-->
+		<configuration name="recipview" value="tree" />
+
+		<configuration name="subjectprefix" value="" />
+
+		<!-- idea from Shelby -->
+		<!-- <configuration name="allow_outside_recipients" value="false" /> -->
+
+		<!-- <configuration name="allow_attachments" value="false" /> -->
+
+		<!-- <configuration name="replyto" value="" /> -->
+
+		<!-- requested by Cheryl -->
+		<!-- This should be "true" or "false" -->
+		<configuration name="displayinvalidemailaddrs" value="true" />
+
+		<!-- <configuration name="alpha_by" value="display" /> -->
+
+		<!-- This should be "true" or "false" -->
+		<configuration name="emailarchive" value="" />
+
+		<configuration name="mail.newlock.siteid" value="" />
+
+		<!-- all the roles -->
+		<configuration name="role1realmid" value="" />
+		<configuration name="role1id" value="" />
+		<configuration name="role1singular" value="" />
+		<configuration name="role1plural" value="" />
+
+		<configuration name="role2realmid" value="" />
+		<configuration name="role2id" value="" />
+		<configuration name="role2singular" value="" />
+		<configuration name="role2plural" value="" />
+
+		<configuration name="role3realmid" value="" />
+		<configuration name="role3id" value="" />
+		<configuration name="role3singular" value="" />
+		<configuration name="role3plural" value="" />
+
+		<configuration name="role4realmid" value="" />
+		<configuration name="role4id" value="" />
+		<configuration name="role4singular" value="" />
+		<configuration name="role4plural" value="" />
+
+		<configuration name="role5realmid" value="" />
+		<configuration name="role5id" value="" />
+		<configuration name="role5singular" value="" />
+		<configuration name="role5plural" value="" />
+
+		<configuration name="role6realmid" value="" />
+		<configuration name="role6id" value="" />
+		<configuration name="role6singular" value="" />
+		<configuration name="role6plural" value="" />
+
+		<configuration name="role7realmid" value="" />
+		<configuration name="role7id" value="" />
+		<configuration name="role7singular" value="" />
+		<configuration name="role7plural" value="" />
+
+		<configuration name="role8realmid" value="" />
+		<configuration name="role8id" value="" />
+		<configuration name="role8singular" value="" />
+		<configuration name="role8plural" value="" />
+
+		<configuration name="role9realmid" value="" />
+		<configuration name="role9id" value="" />
+		<configuration name="role9singular" value="" />
+		<configuration name="role9plural" value="" />
+
+		<configuration name="role10realmid" value="" />
+		<configuration name="role10id" value="" />
+		<configuration name="role10singular" value="" />
+		<configuration name="role10plural" value="" />
+
+		<configuration name="role11realmid" value="" />
+		<configuration name="role11id" value="" />
+		<configuration name="role11singular" value="" />
+		<configuration name="role11plural" value="" />
+
+		<configuration name="role12realmid" value="" />
+		<configuration name="role12id" value="" />
+		<configuration name="role12singular" value="" />
+		<configuration name="role12plural" value="" />
+
+		<configuration name="role13realmid" value="" />
+		<configuration name="role13id" value="" />
+		<configuration name="role13singular" value="" />
+		<configuration name="role13plural" value="" />
+
+		<configuration name="role14realmid" value="" />
+		<configuration name="role14id" value="" />
+		<configuration name="role14singular" value="" />
+		<configuration name="role14plural" value="" />
+
+		<configuration name="role15realmid" value="" />
+		<configuration name="role15id" value="" />
+		<configuration name="role15singular" value="" />
+		<configuration name="role15plural" value="" />
+
+		<configuration name="sendmecopy" value="" />
+		<configuration name="replyto" value="" />
+		<configuration name="messageformat" value="" />
+	</tool>
+
+	<function name="mailtool.admin" />
+	<function name="mailtool.send" />
+
+</registration>
