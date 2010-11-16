@@ -54,7 +54,7 @@
             <artifactId>mailsender-api</artifactId>
         </dependency>
 
-        <!-- provided -->
+        <!-- provided commons -->
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
