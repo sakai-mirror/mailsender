@@ -615,6 +615,7 @@ public class ExternalLogicImpl implements ExternalLogic
 		try
 		{
 			emailMsg.setFrom(replyToEmail, replyToName);
+			emailMsg.setBounceAddress(replyToEmail);
 		}
 		catch (EmailException ae)
 		{
