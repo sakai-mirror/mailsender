@@ -143,9 +143,9 @@
     </developers>
 
     <scm>
-        <connection>scm:svn:https://source.sakaiproject.org/svn/mailsender/trunk</connection>
-        <developerConnection>scm:svn:https://source.sakaiproject.org/svn/mailsender/trunk</developerConnection>
-        <url>https://source.sakaiproject.org/svn/mailsender/trunk</url>
+        <connection>scm:svn:https://source.sakaiproject.org/svn/mailsender/branches/1.7</connection>
+        <developerConnection>scm:svn:https://source.sakaiproject.org/svn/mailsender/branches/1.7</developerConnection>
+        <url>https://source.sakaiproject.org/svn/mailsender/branches/1.7</url>
     </scm>
 
     <distributionManagement>
