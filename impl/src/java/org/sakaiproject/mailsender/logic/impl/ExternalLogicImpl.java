@@ -377,7 +377,7 @@ public class ExternalLogicImpl implements ExternalLogic
 			return false;
 		}
 		List<String> mailHeaders = new ArrayList<String>();
-		if (config.useRichTextEditor())
+		if (useRTE())
 		{
 			mailHeaders.add(MailArchiveService.HEADER_OUTER_CONTENT_TYPE
 					+ ": text/html; charset=ISO-8859-1");
@@ -458,7 +458,7 @@ public class ExternalLogicImpl implements ExternalLogic
 
 			Email emailMsg = null;
 			// add text part first if HTML
-			if (config.useRichTextEditor()) {
+			if (useRTE()) {
 				Source source = new Source(content);
 				String txtContent = source.getRenderer().toString();
 				emailMsg = buildMessage(txtContent, content, emailAttachments);
@@ -763,6 +763,14 @@ public class ExternalLogicImpl implements ExternalLogic
 		rv.append("]");
 
 		return rv.toString();
+	}
+	private boolean useRTE() {
+		String editor = StringUtils.trimToNull(configService.getString("wysiwyg.editor"));
+		if (editor == null || "htmlarea".equals(editor)) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 
 	public String getCurrentLocationId()

@@ -63,7 +63,6 @@ import org.sakaiproject.mailarchive.api.MailArchiveService;
 import org.sakaiproject.mailsender.MailsenderException;
 import org.sakaiproject.mailsender.logic.ExternalLogic;
 import org.sakaiproject.mailsender.model.ConfigEntry;
-import org.sakaiproject.mailsender.model.ConfigEntry.EditorType;
 import org.sakaiproject.site.api.Site;
 import org.sakaiproject.site.api.SiteService;
 import org.sakaiproject.time.api.TimeService;
@@ -371,7 +370,6 @@ public class ExternalLogicImplTest {
 	@Test
 	public void sendPlainMailNoAttachments() throws Exception {
 		ConfigEntry config = configLogic.getConfig();
-		config.setEditorType(EditorType.htmlarea.toString());
 
 		String fromEmail = "from@example.com";
 		String fromName = "Potamus, Peter";
@@ -442,15 +440,13 @@ public class ExternalLogicImplTest {
 		MimeMessage mimeMsg = msg.getMimeMessage();
 		assertEquals(subject, mimeMsg.getSubject());
 		String content = getContent(mimeMsg);
-		assertTrue(content.contains(QUOTED_PRINTABLE));
-		assertFalse(content.contains("åæÆÐ"));
+		assertTrue(content.contains("åæÆÐ"));
 		assertFalse(content.contains(CONTENT_DISPOSITION_ATTACHMENT));
 	}
 
 	@Test
 	public void sendPlainMailWithAttachments() throws Exception {
 		ConfigEntry config = configLogic.getConfig();
-		config.setEditorType(EditorType.htmlarea.toString());
 
 		String fromEmail = "from@example.com";
 		String fromName = "Potamus, Peter";

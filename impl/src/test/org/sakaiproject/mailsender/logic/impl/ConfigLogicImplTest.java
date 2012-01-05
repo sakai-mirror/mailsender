@@ -82,15 +82,6 @@ public class ConfigLogicImplTest {
 	}
 
 	@Test
-	public void useRTE() {
-		assertTrue(logic.useRichTextEditor());
-
-		when(configService.getString(ConfigLogic.WSYIWYG_EDITOR_PROP))
-				.thenReturn("htmlarea");
-		assertFalse(logic.useRichTextEditor());
-	}
-
-	@Test
 	public void isEmailTestMode() {
 		assertFalse(logic.isEmailTestMode());
 

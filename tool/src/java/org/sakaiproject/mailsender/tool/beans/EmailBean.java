@@ -54,9 +54,7 @@ public class EmailBean
 	private TargettedMessageList messages;
     private MessageLocator messageLocator;
 
-	public EmailBean()
-	{
-	}
+	public EmailBean() { }
 
 	public EmailBean(ComposeLogic composeLogic, ConfigLogic configLogic,
 			ExternalLogic externalLogic, Map<String, MultipartFile> multipartMap,
