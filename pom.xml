@@ -148,14 +148,6 @@
         <url>https://source.sakaiproject.org/svn/mailsender/branches/1.7</url>
     </scm>
 
-    <distributionManagement>
-        <site>
-            <id>sakai-site</id>
-            <name>Sakai release Site</name>
-            <url>${url.localsite}</url>
-        </site>
-    </distributionManagement>
-
 <!--
     <dependencies>
         <dependency>
