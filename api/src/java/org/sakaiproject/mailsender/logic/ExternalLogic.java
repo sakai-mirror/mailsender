@@ -19,6 +19,7 @@ package org.sakaiproject.mailsender.logic;
 import java.util.List;
 import java.util.Map;
 
+import org.sakaiproject.email.api.Attachment;
 import org.sakaiproject.mailsender.AttachmentException;
 import org.sakaiproject.mailsender.MailsenderException;
 import org.sakaiproject.mailsender.model.ConfigEntry;
@@ -162,7 +163,7 @@ public interface ExternalLogic
 	 */
 	List<String> sendEmail(ConfigEntry config, String fromEmail, String fromName,
 			Map<String, String> to, String subject, String content,
-			Map<String, MultipartFile> attachments) throws MailsenderException, AttachmentException;
+			List<Attachment> attachments) throws MailsenderException, AttachmentException;
 
 	/**
 	 * Append email to Email Archive
