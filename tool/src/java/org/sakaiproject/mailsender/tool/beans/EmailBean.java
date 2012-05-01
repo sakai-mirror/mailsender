@@ -16,8 +16,8 @@
  **********************************************************************************/
 package org.sakaiproject.mailsender.tool.beans;
 
-import java.io.IOException;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -199,24 +199,24 @@ public class EmailBean
 		{
 			if (invalids.size() == 0)
 			{
-                List<Attachment> attachments = new ArrayList<Attachment>();
-                if (multipartMap != null && !multipartMap.isEmpty()) {
-                    for (Entry<String, MultipartFile> entry : multipartMap.entrySet()) {
-                        MultipartFile mf = entry.getValue();
-                        String filename = mf.getOriginalFilename();
-                        try
-                        {
-                            File f = File.createTempFile(filename, null);
-                            mf.transferTo(f);
-                            Attachment attachment = new Attachment(f, filename);
-                            attachments.add(attachment);
-                        }
-                        catch (IOException ioe)
-                        {
-                            throw new AttachmentException(ioe.getMessage());
-                        }
-                    }
-                }
+				List<Attachment> attachments = new ArrayList<Attachment>();
+				if (multipartMap != null && !multipartMap.isEmpty()) {
+					for (Entry<String, MultipartFile> entry : multipartMap.entrySet()) {
+						MultipartFile mf = entry.getValue();
+		                String filename = mf.getOriginalFilename();
+		                try
+		                {
+		                    File f = File.createTempFile(filename, null);
+		                    mf.transferTo(f);
+		                    Attachment attachment = new Attachment(f, filename);
+		                    attachments.add(attachment);
+		                }
+		                catch (IOException ioe)
+		                {
+		                    throw new AttachmentException(ioe.getMessage());
+		                }
+					}
+				}
 				// send the message
 				invalids = externalLogic.sendEmail(config, fromEmail, fromDisplay,
 						emailusers, subject, content, attachments);

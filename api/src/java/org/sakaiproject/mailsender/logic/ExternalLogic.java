@@ -25,7 +25,6 @@ import org.sakaiproject.mailsender.MailsenderException;
 import org.sakaiproject.mailsender.model.ConfigEntry;
 import org.sakaiproject.site.api.Site;
 import org.sakaiproject.user.api.User;
-import org.springframework.web.multipart.MultipartFile;
 
 /**
  * This is the interface for logic which is external to our app logic

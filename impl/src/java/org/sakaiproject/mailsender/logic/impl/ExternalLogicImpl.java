@@ -389,9 +389,9 @@ public class ExternalLogicImpl implements ExternalLogic
 
         if (attachments != null)
         {
-            for (Attachment attachment : attachments) {
-                msg.addAttachment(attachment);
-            }
+        	for (Attachment attachment : attachments) {
+        		msg.addAttachment(attachment);
+        	}
         }
 
 		// send a copy
