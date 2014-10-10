@@ -203,6 +203,8 @@ public class EmailBean
 				if (multipartMap != null && !multipartMap.isEmpty()) {
 					for (Entry<String, MultipartFile> entry : multipartMap.entrySet()) {
 						MultipartFile mf = entry.getValue();
+						// Although JavaDoc says it may contain path, Commons implementation always just
+						// returns the filename without the path.
 		                String filename = mf.getOriginalFilename();
 		                try
 		                {
@@ -220,12 +222,13 @@ public class EmailBean
 				// send the message
 				invalids = externalLogic.sendEmail(config, fromEmail, fromDisplay,
 						emailusers, subject, content, attachments);
+
+				// append to the email archive
+				String siteId = externalLogic.getSiteID();
+				String fromString = fromDisplay + " <" + fromEmail + ">";
+				addToArchive(config, fromString, subject, siteId, attachments);
 			}
 
-			// append to the email archive
-			String siteId = externalLogic.getSiteID();
-			String fromString = fromDisplay + " <" + fromEmail + ">";
-			addToArchive(config, fromString, subject, siteId);
 
 			// build output message for results screen
 			for (Entry<String, String> entry : emailusers.entrySet())
@@ -296,7 +299,7 @@ public class EmailBean
 		return EMAIL_SENT;
 	}
 
-	private void addToArchive(ConfigEntry config, String fromString, String subject, String siteId)
+	private void addToArchive(ConfigEntry config, String fromString, String subject, String siteId, List<Attachment> attachments)
 	{
 		if (emailEntry.getConfig().isAddToArchive())
 		{
@@ -314,7 +317,7 @@ public class EmailBean
 			}
 			String emailarchive = "/mailarchive/channel/" + siteId + "/main";
 			String content = emailEntry.getContent() + attachment_info.toString();
-			externalLogic.addToArchive(config, emailarchive, fromString, subject, content);
+			externalLogic.addToArchive(config, emailarchive, fromString, subject, content, attachments);
 		}
 	}
 
